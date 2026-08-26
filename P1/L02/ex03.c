@@ -9,14 +9,7 @@ O usuário do programa deve fornecer o número de termos, e estes devem ser impr
 
 #include <stdio.h>
 
-int calcula_fibonacci(n) {
-    int a = 0;
-    int b = 1;
-
-    for (int i = 0; a = a + b; i++) {
-        printf("%d %d", a, b);
-    }
-}
+void calcula_fibonacci(int n);
 
 int main(void) {
     int numero;
@@ -27,4 +20,27 @@ int main(void) {
     calcula_fibonacci(numero);
 
     return 0;
+}
+
+void calcula_fibonacci(int n) {
+    if (n <= 0) {
+        return;
+    }
+
+    int a = 1;
+    int b = 1;
+    int proximo;
+
+    for (int i = 1; i <= n; i++) {
+        if (i == 1) {
+            printf("%d", a);
+        } else if (i == 2) {
+            printf(" %d", b);
+        } else {
+            proximo = a + b;
+            printf(" %d", proximo);
+            a = b;
+            b = proximo;
+        }
+    }
 }
