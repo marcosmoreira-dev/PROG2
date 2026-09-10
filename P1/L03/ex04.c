@@ -5,12 +5,20 @@ b. retorna 0 se o número num é primo e 1 caso contrário. Se o número não fo
 max e min devem assumir os valores do menor e do maior divisores inteiros do número,
 respectivamente, desconsiderando o número 1 e o próprio número num. */
 
-int divs(int n, int *max, int *min);
+int divs(int num, int *max, int *min);
 
 int main() {
     return 0;
 }
 
-int divs(int n, int *max, int *min) {
+int divs(int num, int *max, int *min) {
+    if (num <= 1) return 0;
     
+    for (int i = 2; i <= num / 2; i++) {
+        if (num % i == 0) {
+            return 1;
+        } else { 
+            
+        }
+    }
 }
